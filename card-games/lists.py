@@ -65,6 +65,7 @@ def approx_average_is_average(hand):
 
     return true_average in (approx_average_1, approx_average_2)
 
+
 def average_even_is_average_odd(hand):
     """Return if the (average of even indexed card values) == (average of odd indexed card values).
 
@@ -84,7 +85,10 @@ def average_even_is_average_odd(hand):
     if sum(even_numbers) / len(even_numbers) == sum(odd_numbers) / len(odd_numbers):
         return True
     return False
+
+
 average_even_is_average_odd([1, 2, 3, 4, 4])
+
 
 def maybe_double_last(hand):
     """Multiply a Jack card value in the last index position by 2.

@@ -3,7 +3,7 @@ def classify(number):
         raise ValueError("Classification is only possible for positive integers.")
 
     divisors = get_divisors(number)
-    
+
     if sum(divisors) == number:
         return "perfect"
     elif sum(divisors) > number:

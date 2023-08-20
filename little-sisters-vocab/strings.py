@@ -7,8 +7,7 @@ def add_prefix_un(word):
     :param word: str - containing the root word.
     :return: str - of root word prepended with 'un'.
     """
-    return f'un{word}'
-    
+    return f"un{word}"
 
 
 def make_word_groups(vocab_words):
@@ -25,13 +24,13 @@ def make_word_groups(vocab_words):
     For example: list('en', 'close', 'joy', 'lighten'),
     produces the following string: 'en :: enclose :: enjoy :: enlighten'.
     """
-    prefix: str =  vocab_words[0]
+    prefix: str = vocab_words[0]
     output: list = []
     output.append(prefix)
     for word in vocab_words[1:]:
         output.append(prefix + word)
-        
-    return ' :: '.join(output)
+
+    return " :: ".join(output)
 
 
 def remove_suffix_ness(word):
@@ -44,11 +43,12 @@ def remove_suffix_ness(word):
     """
     word_without_suffix = word[:-4]
 
-    if word_without_suffix[-1:] == 'i':
-        word_without_suffix = word_without_suffix.replace(word_without_suffix[-1:], 'y')
+    if word_without_suffix[-1:] == "i":
+        word_without_suffix = word_without_suffix.replace(word_without_suffix[-1:], "y")
         return word_without_suffix
     return word_without_suffix
-    
+
+
 def adjective_to_verb(sentence, index):
     """Change the adjective within the sentence to a verb.
 
@@ -58,9 +58,9 @@ def adjective_to_verb(sentence, index):
 
     For example, ("It got dark as the sun set", 2) becomes "darken".
     """
-    verb_suffix = 'en'
-    sentence = sentence.replace('.', '')
+    verb_suffix = "en"
+    sentence = sentence.replace(".", "")
     words: list = sentence.split()
-    words[index] = f'{words[index]}{verb_suffix}'
-    
+    words[index] = f"{words[index]}{verb_suffix}"
+
     return words[index]

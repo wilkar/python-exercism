@@ -6,6 +6,7 @@ def is_triangle(sides: list) -> bool:
             return False
     return True
 
+
 def equilateral(sides: list):
     if is_triangle(sides) is True:
         try:
@@ -30,7 +31,3 @@ def scalene(sides: list):
         if len(set(sides)) == 3:
             return True
     return False
-
-
-
-

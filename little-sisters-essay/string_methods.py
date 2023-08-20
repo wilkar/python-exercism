@@ -13,14 +13,15 @@ def capitalize_title(title):
     #     return title
     # upper = first_letter.upper()
     # return title.replace(title[0], upper)
-    
+
+
 def check_sentence_ending(sentence):
     """Check the ending of the sentence to verify that a period is present.
 
     :param sentence: str - a sentence to check.
     :return: bool - return True if punctuated correctly with period, False otherwise.
     """
-    if sentence[-1] == '.':
+    if sentence[-1] == ".":
         return True
     return False
 
@@ -46,4 +47,3 @@ def replace_word_choice(sentence, old_word, new_word):
     if old_word in sentence:
         sentence = sentence.replace(old_word, new_word)
     return sentence
-        

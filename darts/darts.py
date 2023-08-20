@@ -1,5 +1,6 @@
 from math import sqrt
 
+
 def score(x: int, y: int):
     distance = sqrt(x**2 + y**2)
 

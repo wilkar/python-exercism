@@ -3,7 +3,7 @@ def convert(number):
     sound: str = ""
     for key, value in raindrops.items():
         if number % key == 0:
-            sound = f'{sound}{value}'
+            sound = f"{sound}{value}"
     if sound == "":
-        sound = str(number)    
+        sound = str(number)
     return sound

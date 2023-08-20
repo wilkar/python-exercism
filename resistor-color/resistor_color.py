@@ -4,15 +4,15 @@ def color_code(color):
 
 def colors():
     colors = [
-            "black",
-            "brown",
-            "red",
-            "orange",
-            "yellow",
-            "green",
-            "blue",
-            "violet",
-            "grey",
-            "white",
-        ]
+        "black",
+        "brown",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "violet",
+        "grey",
+        "white",
+    ]
     return colors

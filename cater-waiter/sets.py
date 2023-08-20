@@ -36,7 +36,7 @@ def check_drinks(drink_name, drink_ingredients):
     name followed by "Cocktail" (includes alcohol).
 
     """
-    
+
     if ALCOHOLS.isdisjoint(drink_ingredients):
         return f"{drink_name} Mocktail"
     else:
@@ -132,8 +132,7 @@ def singleton_ingredients(dishes, intersection):
 
     The function should return a `set` of ingredients that only appear in a single dish.
     """
-    
-    
+
     ingredient_counts = {}
     for dish in dishes:
         for ingredient in dish:

@@ -3,7 +3,7 @@ name: Run Unit Tests
 on: [push, pull_request]
 
 jobs:
-  test:
+  run_tests:
     runs-on: ubuntu-latest
     steps:
     - name: Check out code
@@ -14,7 +14,7 @@ jobs:
       with:
         python-version: '3.11.2'
 
-    - name: Install and configure Poetry
+    - name: Install Poetry
       run: |
           curl -sSL https://install.python-poetry.org | python3 -
           poetry config virtualenvs.in-project true
@@ -39,3 +39,6 @@ jobs:
           poetry run pytest
           popd
         done
+      
+    - name: Run black
+      run: poetry run black --check .
