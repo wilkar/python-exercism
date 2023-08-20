@@ -40,5 +40,8 @@ jobs:
           popd
         done
       
-    - name: Run black
+    - name: Run Black
       run: poetry run black --check .
+
+    - name: Run Mypy
+      run: poetry run mypy .
