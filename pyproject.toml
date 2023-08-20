@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "python-excercism"
+version = "0.1.0"
+description = "Excercises from Python tract on exercism.org"
+authors = ["Karol Wiliwis <karol.wiliwis@gmail.com>"]
+readme = "README.md"
+packages = [{include = "python_excercism"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^7.4.0"
+black = "^23.7.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

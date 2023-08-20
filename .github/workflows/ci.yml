@@ -14,11 +14,28 @@ jobs:
       with:
         python-version: '3.11.2'
 
+    - name: Install and configure Poetry
+      run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          poetry config virtualenvs.in-project true
+    
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: .venv
+        key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+        restore-keys: |
+            ${{ runner.os }}-poetry-
+    
+    - name: Install dependencies
+      run: |
+        poetry install
+
     - name: Run tests
       run: | 
         for exercise in $(find . -name '*_test.py' -printf '%h\n' | sort -u); do
             echo "Running tests for $exercise..."
             pushd $exercise
-            pytest
+            poetry run pytest
             popd
         done
