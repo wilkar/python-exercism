@@ -33,9 +33,9 @@ jobs:
 
     - name: Run tests
       run: | 
-        for exercise in $(find . -name '*_test.py' -printf '%h\n' | sort -u); do
-            echo "Running tests for $exercise..."
-            pushd $exercise
-            poetry run pytest
-            popd
+        for exercise in $(find . -path "./.venv" -prune -o -name '*_test.py' -printf '%h\n' | sort -u); do
+          echo "Running tests for $exercise..."
+          pushd $exercise
+          poetry run pytest
+          popd
         done
