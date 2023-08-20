@@ -3,13 +3,13 @@ name: Run Unit Tests
 on: [push, pull_request]
 
 jobs:
-  tests:
+  run_tests:
     runs-on: ubuntu-latest
     steps:
     - name: Check out code
       uses: actions/checkout@v2
 
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.11.2'
@@ -18,18 +18,18 @@ jobs:
       run: |
           curl -sSL https://install.python-poetry.org | python3 -
           poetry config virtualenvs.in-project true
-          echo "$GITHUB_WORKSPACE/.poetry/bin" >> $GITHUB_PATH  # Ensure poetry is in PATH
-
+    
     - name: Cache dependencies
       uses: actions/cache@v2
       with:
         path: .venv
-        key: ${{ runner.os }}-python-3.11.2-poetry-${{ hashFiles('**/poetry.lock') }}
+        key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
         restore-keys: |
-            ${{ runner.os }}-python-3.11.2-poetry-
+            ${{ runner.os }}-poetry-
     
     - name: Install dependencies
-      run: poetry install
+      run: |
+        poetry install
 
     - name: Run tests
       run: | 
@@ -39,14 +39,7 @@ jobs:
           poetry run pytest
           popd
         done
-
-  lint:
-    needs: tests
-    runs-on: ubuntu-latest
-    steps:
-    - name: Check out code
-      uses: actions/checkout@v2
-
+      
     - name: Run Black
       run: poetry run black --check .
 
