@@ -3327,7 +3327,7 @@ group_2 = [
     (item[1], item[2]) for item in recipes_without_duplicates if item[1] in nondupes
 ]
 
-dishes_to_special_label = sorted(group_1 + group_2) # type: ignore
+dishes_to_special_label = sorted(group_1 + group_2)  # type: ignore
 
 dishes_labeled = [
     ("Baked Kelewele", {"red onion"}),
