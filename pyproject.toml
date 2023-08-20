@@ -4,7 +4,6 @@ version = "0.1.0"
 description = "Excercises from Python tract on exercism.org"
 authors = ["Karol Wiliwis <karol.wiliwis@gmail.com>"]
 readme = "README.md"
-packages = [{include = "python_excercism"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
