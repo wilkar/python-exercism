@@ -1,7 +1,7 @@
 import string
 
 
-def rotate(text: str, key: int):
+def rotate(text: str, key: int) -> str:
     rotated_values: list = []
     for letter in text:
         if letter not in list(string.ascii_letters):
@@ -16,7 +16,7 @@ def rotate(text: str, key: int):
     return "".join(rotated_values)
 
 
-def _get_rotated_letter(letter: str, key: int) -> int:
+def _get_rotated_letter(letter: str, key: int) -> str:
     alphabet = list(string.ascii_lowercase)
     index = alphabet.index(letter.lower()) + 1
     rotated_index = (index + key) % 26
