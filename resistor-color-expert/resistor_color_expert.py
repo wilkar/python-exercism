@@ -23,7 +23,7 @@ tolerance = {
 }
 
 
-def label(colors: list[str]) -> list:
+def label(colors: list[str]) -> list[str]:
     if len(colors) <= 2:
         print(colors[0])
         return [str(resistors[colors[0]]), "ohms"]
@@ -62,12 +62,11 @@ def _get_base_value(base_colors: list[str]) -> str:
 
 def resistor_label(colors: list[str]) -> str:
     value = label(colors)
-    if value[0] == 0:  # changed "0" to 0 since value[0] is a number
-        return " ".join(map(str, value))
+    if value[0] == "0":
+        return " ".join(value)
     if len(colors) == 4:
-        return f'{" ".join(map(str, value))} ±{tolerance[colors[3]]}%'
-    return f'{" ".join(map(str, value))} ±{tolerance[colors[4]]}%'
-
+        return f'{" ".join(str(v) for v in value)} ±{tolerance[colors[3]]}%'
+    return f'{" ".join(str(v) for v in value)} ±{tolerance[colors[4]]}%'
 
 
 def _format_value(value) -> int | float:
