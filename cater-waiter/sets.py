@@ -147,5 +147,3 @@ def singleton_ingredients(dishes, intersection):
             singletons.add(ingredient)
 
     return singletons
-
-

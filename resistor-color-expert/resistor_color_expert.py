@@ -23,7 +23,7 @@ tolerance = {
 }
 
 
-def label(colors: list[str]) -> list[str]:
+def label(colors: list[str]) -> list:
     if len(colors) <= 2:
         print(colors[0])
         return [str(resistors[colors[0]]), "ohms"]
@@ -48,7 +48,7 @@ def label(colors: list[str]) -> list[str]:
         value_and_unit = [value / 10**3, "kiloohms"]
     else:
         value_and_unit = [value, "ohms"]
-    value_and_unit[0] = _format_value(value_and_unit[0])
+    value_and_unit[0] = str(_format_value(value_and_unit[0]))
     return value_and_unit
 
 

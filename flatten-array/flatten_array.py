@@ -1,4 +1,4 @@
-def flatten(iterable: list[any]):
+def flatten(iterable: list) -> list:
     flatten_list: list = []
 
     for item in iterable:

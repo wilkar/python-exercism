@@ -1,5 +1,6 @@
 from typing import Callable
 
+
 def append(list1: list, list2: list) -> list:
     for item in list2:
         list1.append(item)
