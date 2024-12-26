@@ -1,5 +1,6 @@
 import string
 
+
 def rows(letter: str) -> list:
     alphabet = string.ascii_uppercase
     index = alphabet.index(letter)
@@ -19,5 +20,5 @@ def row(letter: str, max_index: int, index: int) -> str:
 
     spaces_between = " " * (2 * index - 1)
     spaces_outer = " " * (max_index - index)
-    
+
     return f"{spaces_outer}{letter}{spaces_between}{letter}{spaces_outer}"

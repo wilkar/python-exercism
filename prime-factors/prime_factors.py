@@ -1,5 +1,6 @@
 from typing import List
 
+
 def factors(value: int) -> List[int]:
     prime_factors: list = []
     i: int = 2
@@ -10,5 +11,3 @@ def factors(value: int) -> List[int]:
         else:
             i += 1
     return prime_factors
-
-

@@ -32,4 +32,3 @@ def get_codons(strand: str) -> list[str]:
             break
         codons.append(codon)
     return codons
-
