@@ -78,7 +78,7 @@ def say_hundreds(number: int):
     return number_to_say
 
 
-def say(number: int):
+def say_func(number: int):
     if number < 0 or number > 999999999999:
         raise ValueError("input out of range")
 
@@ -86,7 +86,7 @@ def say(number: int):
         return "zero"
 
     parts = get_number_parts(number)
-    complete_number_to_say: int = ""
+    complete_number_to_say: str = ""
 
     for part, value in parts.items():
         complete_number_to_say = (

@@ -18,10 +18,11 @@ def proteins(strand: str):
     return proteins
 
 
-def get_protein(codon: str) -> str:
+def get_protein(codon: str) -> str | None:
     for protein, values in protein_mapping.items():
         if codon in values:
             return protein
+    return None
 
 
 def get_codons(strand: str) -> list[str]:

@@ -1,7 +1,7 @@
 from typing import List
 
 
-def factors(value: int) -> List[int]:
+def factors(value: float) -> List[int]:
     prime_factors: list = []
     i: int = 2
     while value > 1:

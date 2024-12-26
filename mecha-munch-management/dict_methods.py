@@ -2,7 +2,7 @@
 from collections import OrderedDict
 
 
-def add_item(current_cart: dict, items_to_add: iter):
+def add_item(current_cart: dict, items_to_add: list):
     """Add items to shopping cart.
 
     :param current_cart: dict - the current shopping cart.
