@@ -21,7 +21,8 @@ class ProverbTest(unittest.TestCase):
     def test_one_piece(self):
         input_data = ["nail"]
         self.assertEqual(
-            proverb_func(*input_data, qualifier=None), ["And all for the want of a nail."]
+            proverb_func(*input_data, qualifier=None),
+            ["And all for the want of a nail."],
         )
 
     def test_two_pieces(self):
